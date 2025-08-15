@@ -16,6 +16,54 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleButton.setAttribute("aria-expanded", "false");
     }
   });
+
+  // Language Switcher
+  var langBgBtn = document.getElementById("lang-bg");
+  var langEnBtn = document.getElementById("lang-en");
+  var currentLang = localStorage.getItem("language") || "en";
+
+  // Initialize language
+  setLanguage(currentLang);
+
+  if (langBgBtn && langEnBtn) {
+    langBgBtn.addEventListener("click", function () {
+      setLanguage("bg");
+      localStorage.setItem("language", "bg");
+      currentLang = "bg";
+    });
+
+    langEnBtn.addEventListener("click", function () {
+      setLanguage("en");
+      localStorage.setItem("language", "en");
+      currentLang = "en";
+    });
+  }
+
+  function setLanguage(lang) {
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+
+    // Update page title
+    var title = document.querySelector("title");
+    if (title && title.dataset[lang]) {
+      title.textContent = title.dataset[lang];
+    }
+
+    // Update all elements with data attributes
+    var elements = document.querySelectorAll("[data-en][data-bg]");
+    elements.forEach(function (element) {
+      if (element.dataset[lang]) {
+        element.textContent = element.dataset[lang];
+      }
+    });
+
+    // Update language button states
+    if (langBgBtn && langEnBtn) {
+      langBgBtn.classList.toggle("active", lang === "bg");
+      langEnBtn.classList.toggle("active", lang === "en");
+    }
+  }
+
   var year = document.getElementById("year");
   if (year) {
     year.textContent = String(new Date().getFullYear());

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio CV</title>
+    <title data-en="Portfolio CV" data-bg="Портфолио CV">Portfolio CV</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -19,11 +19,46 @@
           <span class="hamburger" aria-hidden="true"></span>
         </button>
         <ul id="nav-links" class="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#marquee">Tech Stack</a></li>
-          <li><a href="#hobbies">Hobbies</a></li>
-          <li><a href="#traits">Personal Traits</a></li>
+          <li><a href="#hero" data-en="Home" data-bg="Начало">Home</a></li>
+          <li>
+            <a href="#marquee" data-en="Tech Stack" data-bg="Технологии"
+              >Tech Stack</a
+            >
+          </li>
+          <li>
+            <a href="#hobbies" data-en="Hobbies" data-bg="Хобита">Hobbies</a>
+          </li>
+          <li>
+            <a
+              href="#traits"
+              data-en="Personal Traits"
+              data-bg="Лична характеристика"
+              >Personal Traits</a
+            >
+          </li>
         </ul>
+        <div
+          class="language-switcher"
+          role="group"
+          aria-label="Language selection"
+        >
+          <button
+            id="lang-en"
+            class="lang-btn"
+            data-lang="en"
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+          <button
+            id="lang-bg"
+            class="lang-btn"
+            data-lang="bg"
+            aria-label="Switch to Bulgarian"
+          >
+            BG
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -31,8 +66,16 @@
       <section id="hero" class="hero">
         <div class="hero-grid">
           <div class="hero-text">
-            <h1>Hi, I’m Petar Petrov – Developer & Problem Solver.</h1>
-            <p>
+            <h1
+              data-en="Hi, I'm Petar Petrov – Developer & Problem Solver."
+              data-bg="Здравейте, аз съм Петър Петров и се развивам в сферата на програмирането."
+            >
+              Hi, I'm Petar Petrov – Developer & Problem Solver.
+            </h1>
+            <p
+              data-en="I build fast, beautiful, and functional experiences that help people and businesses grow."
+              data-bg="Стремя се да създавам бързи, красиви и функционални решения, които помагат на хората и бизнесите да растат."
+            >
               I build fast, beautiful, and functional experiences that help
               people and businesses grow.
             </p>
@@ -51,7 +94,7 @@
       </section>
 
       <section id="marquee" class="tech-marquee" aria-label="Tech stack logos">
-        <h2>Tech Stack</h2>
+        <h2 data-en="Tech Stack" data-bg="Технологии">Tech Stack</h2>
         <div class="marquee">
           <div class="marquee-group">
             <div class="tech-item">
@@ -213,7 +256,7 @@
       </section>
 
       <section id="hobbies" class="hobbies" aria-label="Hobbies">
-        <h2>Hobbies</h2>
+        <h2 data-en="Hobbies" data-bg="Хобита">Hobbies</h2>
         <div class="hobbies-grid">
           <div class="hobby-item">
             <img
@@ -224,7 +267,9 @@
               width="40"
               height="40"
             />
-            <span class="hobby-name">Poker</span>
+            <span class="hobby-name" data-en="Poker" data-bg="Покер"
+              >Poker</span
+            >
           </div>
           <div class="hobby-item">
             <img
@@ -235,7 +280,9 @@
               width="40"
               height="40"
             />
-            <span class="hobby-name">Gaming</span>
+            <span class="hobby-name" data-en="Gaming" data-bg="Игри"
+              >Gaming</span
+            >
           </div>
           <div class="hobby-item">
             <img
@@ -246,7 +293,9 @@
               width="40"
               height="40"
             />
-            <span class="hobby-name">Coding</span>
+            <span class="hobby-name" data-en="Coding" data-bg="Програмиране"
+              >Coding</span
+            >
           </div>
           <div class="hobby-item">
             <img
@@ -257,7 +306,9 @@
               width="40"
               height="40"
             />
-            <span class="hobby-name">Sports</span>
+            <span class="hobby-name" data-en="Sports" data-bg="Спорт"
+              >Sports</span
+            >
           </div>
           <div class="hobby-item">
             <img
@@ -268,7 +319,9 @@
               width="40"
               height="40"
             />
-            <span class="hobby-name">Traveling</span>
+            <span class="hobby-name" data-en="Traveling" data-bg="Пътуване"
+              >Traveling</span
+            >
           </div>
           <div class="hobby-item">
             <img
@@ -280,39 +333,81 @@
               height="40"
             />
             <span class="hobby-name">
-              Reading <span class="hobby-note">(just joking)</span>
+              <span data-en="Reading" data-bg="Четене">Reading</span>
+              <span
+                class="hobby-note"
+                data-en="(just joking)"
+                data-bg="(шегичка)"
+                >(just joking)</span
+              >
             </span>
           </div>
         </div>
       </section>
 
       <section id="traits" class="traits" aria-label="Personal traits">
-        <h2>Personal Traits</h2>
+        <h2 data-en="Personal Traits" data-bg="Лична характеристика">
+          Personal Traits
+        </h2>
         <div class="traits-inner">
           <div class="traits-section">
-            <h3>Education</h3>
+            <h3 data-en="Education" data-bg="Образование">Education</h3>
             <ul class="traits-list">
-              <li>Master's Degree in Cybersecurity, UNWE, Bulgaria</li>
-              <li>Partially completed C# path at SoftUni</li>
-              <li>1+ year professional experience in OOP with Python</li>
-              <li>Completed 1-month company training program</li>
+              <li
+                data-en="Master's Degree in Cybersecurity, UNWE, Bulgaria"
+                data-bg="Магистърска степен по Киберсигурност, УНСС, България"
+              >
+                Master's Degree in Cybersecurity, UNWE, Bulgaria
+              </li>
+              <li
+                data-en="Partially completed C# path at SoftUni"
+                data-bg="Частично завършена пътека по C# в SoftUni"
+              >
+                Partially completed C# path at SoftUni
+              </li>
+              <li
+                data-en="1+ year professional experience in OOP with Python"
+                data-bg="1+ година професионален опит в ООП с Python"
+              >
+                1+ year professional experience in OOP with Python
+              </li>
+              <li
+                data-en="Completed 1-month company training program"
+                data-bg="Завършен 1-месечен курс по разработка на уебсайтове"
+              >
+                Completed 1-month company training program
+              </li>
             </ul>
           </div>
 
           <div class="traits-section">
-            <h3>Personal Projects</h3>
+            <h3 data-en="Personal Projects" data-bg="Лични проекти">
+              Personal Projects
+            </h3>
             <ul class="traits-list">
-              <li>
+              <li
+                data-en="Mobile App Development for a leading Bulgarian solar panel company using Swagger, Django, PHP, Python, PostgreSQL"
+                data-bg="Разработка на мобилно приложение за водеща българска компания за соларни панели, използвайки Swagger, Django, PHP, Python, PostgreSQL"
+              >
                 Mobile App Development for a leading Bulgarian solar panel
                 company using Swagger, Django, PHP, Python, PostgreSQL
               </li>
-              <li>Built landing pages for personal and freelance projects</li>
+              <li
+                data-en="Built landing pages for personal and freelance projects"
+                data-bg="Създаване на лендинг страници за лични и фрийланс проекти"
+              >
+                Built landing pages for personal and freelance projects
+              </li>
             </ul>
           </div>
 
           <div class="traits-section">
-            <h3>About Me</h3>
-            <p class="traits-description">
+            <h3 data-en="About Me" data-bg="За мен">About Me</h3>
+            <p
+              class="traits-description"
+              data-en="Calm, focused, and solution-driven. I approach challenges with persistence and professionalism, maintaining a positive attitude from the start of the day. I excel under pressure and prevent conflicts by delivering clear, timely information."
+              data-bg="Спокоен, фокусиран и насочен към решения. Подхождам към предизвикателствата с упоритост и професионализъм, поддържайки позитивно отношение от началото на деня. Отлично се справям под натиск и предотвратявам конфликти чрез доставяне на ясна и навременна информация."
+            >
               Calm, focused, and solution-driven. I approach challenges with
               persistence and professionalism, maintaining a positive attitude
               from the start of the day. I excel under pressure and prevent
@@ -373,13 +468,23 @@
           </li>
         </ul>
         <div class="footer-contact" aria-label="Contact Me">
-          <div class="contact-title">Contact Me</div>
+          <div
+            class="contact-title"
+            data-en="Contact Me"
+            data-bg="Свържете се с мен"
+          >
+            Contact Me
+          </div>
           <div class="contact-row">
-            <span class="contact-label">Phone:</span>
+            <span class="contact-label" data-en="Phone:" data-bg="Телефон:"
+              >Phone:</span
+            >
             <span class="contact-value">+3595451789</span>
           </div>
           <div class="contact-row">
-            <span class="contact-label">Email:</span>
+            <span class="contact-label" data-en="Email:" data-bg="Имейл:"
+              >Email:</span
+            >
             <span class="contact-value">we.ppetrov@gmail.com</span>
           </div>
         </div>
