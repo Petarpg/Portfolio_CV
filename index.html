@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio CV</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" role="navigation" aria-label="Primary">
+        <a class="brand" href="#">Your Name</a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#info">Info</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section id="hero" class="hero">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1>Welcome</h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s...
+            </p>
+          </div>
+          <div class="hero-image">
+            <img
+              src="assets/img/hero-placeholder.svg"
+              alt="Placeholder portrait"
+              width="560"
+              height="560"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="tech-marquee" aria-label="Tech stack logos">
+        <div class="marquee">
+          <div class="marquee-track">
+            <img src="assets/img/tech/html.svg" alt="HTML" height="48" />
+            <img src="assets/img/tech/css.svg" alt="CSS" height="48" />
+            <img src="assets/img/tech/js.svg" alt="JavaScript" height="48" />
+            <img src="assets/img/tech/python.svg" alt="Python" height="48" />
+            <img src="assets/img/tech/symfony.svg" alt="Symfony" height="48" />
+            <!-- duplicate for seamless loop -->
+            <img
+              src="assets/img/tech/html.svg"
+              alt="HTML"
+              height="48"
+              aria-hidden="true"
+            />
+            <img
+              src="assets/img/tech/css.svg"
+              alt="CSS"
+              height="48"
+              aria-hidden="true"
+            />
+            <img
+              src="assets/img/tech/js.svg"
+              alt="JavaScript"
+              height="48"
+              aria-hidden="true"
+            />
+            <img
+              src="assets/img/tech/python.svg"
+              alt="Python"
+              height="48"
+              aria-hidden="true"
+            />
+            <img
+              src="assets/img/tech/symfony.svg"
+              alt="Symfony"
+              height="48"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
