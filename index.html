@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <nav class="navbar" role="navigation" aria-label="Primary">
-        <a class="brand" href="#">Your Name</a>
+        <a class="brand" href="#">Petar Petrov</a>
         <button
           class="nav-toggle"
           aria-label="Toggle navigation"
@@ -19,10 +19,10 @@
           <span class="hamburger" aria-hidden="true"></span>
         </button>
         <ul id="nav-links" class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#info">Info</a></li>
+          <li><a href="#about">Home</a></li>
+          <li><a href="#skills">Tech Stack</a></li>
+          <li><a href="#contact">Hobbies</a></li>
+          <li><a href="#info">Personal Traits</a></li>
         </ul>
       </nav>
     </header>
@@ -31,16 +31,15 @@
       <section id="hero" class="hero">
         <div class="hero-grid">
           <div class="hero-text">
-            <h1>Welcome</h1>
+            <h1>Hi, I’m Petar Petrov – Developer & Problem Solver.</h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s...
+              I build fast, beautiful, and functional experiences that help
+              people and businesses grow.
             </p>
           </div>
           <div class="hero-image">
             <img
-              src="assets/img/hero-placeholder.svg"
+              src="assets/img/Hero.jpg"
               alt="Placeholder portrait"
               width="560"
               height="560"
@@ -52,6 +51,7 @@
       </section>
 
       <section class="tech-marquee" aria-label="Tech stack logos">
+        <h2>Tech Stack</h2>
         <div class="marquee">
           <div class="marquee-group">
             <img
@@ -149,7 +149,161 @@
           </div>
         </div>
       </section>
+
+      <section id="hobbies" class="hobbies" aria-label="Hobbies">
+        <h2>Hobbies</h2>
+        <div class="hobbies-grid">
+          <div class="hobby-item">
+            <img
+              class="hobby-icon"
+              src="assets/img/hobbies/casino-chip.png"
+              alt=""
+              aria-hidden="true"
+              width="40"
+              height="40"
+            />
+            <span class="hobby-name">Poker</span>
+          </div>
+          <div class="hobby-item">
+            <img
+              class="hobby-icon"
+              src="assets/img/hobbies/console.png"
+              alt=""
+              aria-hidden="true"
+              width="40"
+              height="40"
+            />
+            <span class="hobby-name">Gaming</span>
+          </div>
+          <div class="hobby-item">
+            <img
+              class="hobby-icon"
+              src="assets/img/hobbies/code.png"
+              alt=""
+              aria-hidden="true"
+              width="40"
+              height="40"
+            />
+            <span class="hobby-name">Coding</span>
+          </div>
+          <div class="hobby-item">
+            <img
+              class="hobby-icon"
+              src="assets/img/hobbies/sports.png"
+              alt=""
+              aria-hidden="true"
+              width="40"
+              height="40"
+            />
+            <span class="hobby-name">Sports</span>
+          </div>
+          <div class="hobby-item">
+            <img
+              class="hobby-icon"
+              src="assets/img/hobbies/airplane-around-earth.png"
+              alt=""
+              aria-hidden="true"
+              width="40"
+              height="40"
+            />
+            <span class="hobby-name">Traveling</span>
+          </div>
+          <div class="hobby-item">
+            <img
+              class="hobby-icon"
+              src="assets/img/hobbies/open-book.png"
+              alt=""
+              aria-hidden="true"
+              width="40"
+              height="40"
+            />
+            <span class="hobby-name">
+              Reading <span class="hobby-note">(just joking)</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="traits" class="traits" aria-label="Personal traits">
+        <h2>Personal Traits</h2>
+        <div class="traits-inner">
+          <ul class="traits-list">
+            <li>Proactive and self-driven</li>
+            <li>Creative problem-solver</li>
+            <li>Responsible and reliable</li>
+            <li>Collaborative team player</li>
+            <li>Adaptable and eager to learn</li>
+          </ul>
+          <p class="traits-note">
+            Short paragraphs fit here too, in case you want to elaborate on
+            specific strengths or add context.
+          </p>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer" aria-label="Footer">
+      <div class="footer-inner">
+        <ul class="footer-links" role="list">
+          <li>
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <img
+                src="assets/img/icons/github.svg"
+                alt="GitHub"
+                width="28"
+                height="28"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <img
+                src="assets/img/icons/instagram.svg"
+                alt="Instagram"
+                width="28"
+                height="28"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <img
+                src="assets/img/icons/facebook.svg"
+                alt="Facebook"
+                width="28"
+                height="28"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="tel:+0000000000" aria-label="Phone number">
+              <img
+                src="assets/img/icons/phone.svg"
+                alt="Phone"
+                width="28"
+                height="28"
+              />
+            </a>
+          </li>
+        </ul>
+        <small class="footer-copy">© <span id="year"></span> Your Name</small>
+      </div>
+    </footer>
 
     <script src="assets/js/main.js"></script>
   </body>

@@ -16,4 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleButton.setAttribute("aria-expanded", "false");
     }
   });
+  var year = document.getElementById("year");
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
+  }
 });
