@@ -19,10 +19,10 @@
           <span class="hamburger" aria-hidden="true"></span>
         </button>
         <ul id="nav-links" class="nav-links">
-          <li><a href="#about">Home</a></li>
-          <li><a href="#skills">Tech Stack</a></li>
-          <li><a href="#contact">Hobbies</a></li>
-          <li><a href="#info">Personal Traits</a></li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#marquee">Tech Stack</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#traits">Personal Traits</a></li>
         </ul>
       </nav>
     </header>
@@ -50,7 +50,7 @@
         </div>
       </section>
 
-      <section class="tech-marquee" aria-label="Tech stack logos">
+      <section id="marquee" class="tech-marquee" aria-label="Tech stack logos">
         <h2>Tech Stack</h2>
         <div class="marquee">
           <div class="marquee-group">
@@ -141,6 +141,7 @@
               alt="PHP"
               height="48"
             />
+            <img src="assets/img/tech/c-sharp.png" alt="C#" height="48" />
             <img
               src="assets/img/tech/icons8-mysql-96.png"
               alt="MySQL"
@@ -227,17 +228,36 @@
       <section id="traits" class="traits" aria-label="Personal traits">
         <h2>Personal Traits</h2>
         <div class="traits-inner">
-          <ul class="traits-list">
-            <li>Proactive and self-driven</li>
-            <li>Creative problem-solver</li>
-            <li>Responsible and reliable</li>
-            <li>Collaborative team player</li>
-            <li>Adaptable and eager to learn</li>
-          </ul>
-          <p class="traits-note">
-            Short paragraphs fit here too, in case you want to elaborate on
-            specific strengths or add context.
-          </p>
+          <div class="traits-section">
+            <h3>Education</h3>
+            <ul class="traits-list">
+              <li>Master's Degree in Cybersecurity, UNWE, Bulgaria</li>
+              <li>Partially completed C# path at SoftUni</li>
+              <li>1+ year professional experience in OOP with Python</li>
+              <li>Completed 1-month company training program</li>
+            </ul>
+          </div>
+
+          <div class="traits-section">
+            <h3>Personal Projects</h3>
+            <ul class="traits-list">
+              <li>
+                Mobile App Development for a leading Bulgarian solar panel
+                company using Swagger, Django, PHP, Python, PostgreSQL
+              </li>
+              <li>Built landing pages for personal and freelance projects</li>
+            </ul>
+          </div>
+
+          <div class="traits-section">
+            <h3>About Me</h3>
+            <p class="traits-description">
+              Calm, focused, and solution-driven. I approach challenges with
+              persistence and professionalism, maintaining a positive attitude
+              from the start of the day. I excel under pressure and prevent
+              conflicts by delivering clear, timely information.
+            </p>
+          </div>
         </div>
       </section>
     </main>

@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   margin: 0;
@@ -138,7 +141,7 @@ body {
 
 /* Tech marquee */
 .tech-marquee {
-  padding: 1rem 0 2.5rem 0;
+  padding: 4rem 1rem;
 }
 .marquee {
   position: relative;
@@ -189,7 +192,7 @@ body {
 
 /* Hobbies */
 .hobbies {
-  padding: 3rem 1rem 4rem 1rem;
+  padding: 4rem 1rem;
 }
 .hobbies-grid {
   display: grid;
@@ -224,15 +227,19 @@ body {
 
 /* Traits */
 .traits {
-  padding: 2rem 1rem 4rem 1rem;
+  padding: 4rem 1rem;
 }
 .traits-inner {
   max-width: 900px;
   margin: 0 auto;
 }
-.traits-title {
+.traits-section {
+  margin-bottom: 2rem;
+}
+.traits-section h3 {
   margin: 0 0 0.75rem 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  color: #0f172a;
 }
 .traits-list {
   margin: 0 0 1rem 1.25rem;
@@ -242,9 +249,10 @@ body {
 .traits-list li {
   margin-bottom: 0.4rem;
 }
-.traits-note {
+.traits-description {
   margin: 0;
   color: #475569;
+  line-height: 1.7;
 }
 
 /* Footer */
