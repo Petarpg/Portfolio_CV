@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="512" height="512" role="img" aria-label="tree.tyga.io">
+  <rect width="256" height="256" rx="28" fill="#16A34A"/>
+  <g fill="#fff">
+    <circle cx="128" cy="96" r="36"/>
+    <rect x="116" y="132" width="24" height="64" rx="6"/>
+    <path d="M64 164h128a8 8 0 0 1 0 16H64a8 8 0 0 1 0-16z"/>
+  </g>
+</svg>
+
+

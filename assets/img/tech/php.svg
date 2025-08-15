@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="512" height="512" role="img" aria-label="PHP">
+  <rect width="256" height="256" rx="28" fill="#777BB3"/>
+  <g fill="#fff">
+    <path d="M66 168l12-80h32c16 0 24 8 24 20 0 16-12 28-28 28H84l-4 32H66zm27-44h12c8 0 12-6 12-12 0-6-4-8-10-8H97l-4 20zM150 168l12-80h18l-4 28h20l4-28h18l-12 80h-18l4-28h-20l-4 28h-18zM198 136"/>
+  </g>
+</svg>
+
+

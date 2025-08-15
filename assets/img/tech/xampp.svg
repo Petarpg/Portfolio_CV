@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="512" height="512" role="img" aria-label="XAMPP">
+  <rect width="256" height="256" rx="28" fill="#FB7A24"/>
+  <g fill="#fff">
+    <path d="M83 84a21 21 0 1 1 0 42 21 21 0 0 1 0-42zm90 0a21 21 0 1 1 0 42 21 21 0 0 1 0-42z"/>
+    <path d="M128 101c-8.8 0-16 7.2-16 16v8c0 17.7-14.3 32-32 32h-6a8 8 0 0 1 0-16h6c8.8 0 16-7.2 16-16v-8c0-17.7 14.3-32 32-32s32 14.3 32 32v8c0 8.8 7.2 16 16 16h6a8 8 0 0 1 0 16h-6c-17.7 0-32-14.3-32-32v-8c0-8.8-7.2-16-16-16z"/>
+  </g>
+</svg>
+
+

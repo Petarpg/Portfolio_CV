@@ -161,15 +161,18 @@ body {
   right: 0;
   background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
-.marquee-track {
+.marquee {
+  display: flex;
+}
+.marquee-group {
   display: flex;
   align-items: center;
   gap: 2.5rem;
   padding: 0.5rem 1rem;
-  width: max-content;
-  animation: scroll-x 22s linear infinite;
+  flex-shrink: 0;
+  animation: scroll-x 25s linear infinite;
 }
-.marquee-track img {
+.marquee-group img {
   display: block;
   height: 48px;
   width: auto;
@@ -180,7 +183,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
