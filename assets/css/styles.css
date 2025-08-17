@@ -180,9 +180,10 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  background: #e2e8f0;
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
+  /* border-radius: 16px; */
+  /* background: #e2e8f0; */
+  /* box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08); */
+  padding: 30px;
 }
 
 /* Tech marquee */
@@ -313,6 +314,88 @@ body {
   margin: 0;
   color: #475569;
   line-height: 1.7;
+}
+
+:root {
+  --dot-size: 12px;
+  --dot-gap: 8px;
+  --accent: #1e90ff; /* синьото на запълнените точки */
+  --muted: #d9d9d9; /* празните точки */
+  --text: #0e1525;
+}
+
+.languages {
+  max-width: 900px;
+  margin: 48px auto;
+  color: var(--text);
+}
+
+.languages h2 {
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  position: relative;
+}
+.languages h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #000;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.lang-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px 40px;
+  align-items: center;
+}
+
+.lang {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 8px 24px;
+  align-items: center;
+}
+
+.lang-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lang-name {
+  font-weight: 700;
+}
+.lang-level {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Редът с точки */
+.lang-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--dot-gap);
+}
+.lang-dots .dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--muted);
+}
+.lang-dots .dot.filled {
+  background: var(--accent);
+}
+
+/* Малко по-компактно на много тесни екрани */
+@media (max-width: 480px) {
+  :root {
+    --dot-size: 10px;
+    --dot-gap: 6px;
+  }
 }
 
 /* Footer */

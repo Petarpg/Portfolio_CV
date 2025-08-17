@@ -64,6 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // --- Language dots initialization ---
+  document.querySelectorAll(".lang-dots").forEach(function (row) {
+    var score = Math.max(0, Math.min(5, Number(row.dataset.score || 0)));
+    for (var i = 1; i <= 5; i++) {
+      var d = document.createElement("span");
+      d.className = "dot" + (i <= score ? " filled" : "");
+      row.appendChild(d);
+    }
+  });
+
+  // --- Year in footer ---
   var year = document.getElementById("year");
   if (year) {
     year.textContent = String(new Date().getFullYear());
