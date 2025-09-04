@@ -67,27 +67,55 @@
         <div class="hero-grid">
           <div class="hero-text">
             <h1
-              data-en="Hi, I'm Petar Petrov – Developer & Problem Solver."
+              data-en="Hi, I'm Petar Petrov and that is how i look like."
               data-bg="Здравейте, аз съм Петър Петров и се развивам в сферата на програмирането."
             >
-              Hi, I'm Petar Petrov – Developer & Problem Solver.
+              Hi, I'm Petar Petrov and that is how i look like.
             </h1>
             <p
-              data-en="Skilled Developer with over a year hands on experience in full-stack development. Eager to assist in building robust systems that support business goals."
+              data-en="If there's a no-bald policy, I'll throw on a wig. Want to see it? Pick a wig option below."
               data-bg="Квалифициран разработчик с над година практически опит в разработката на full-stack системи. Готов да съдейства за изграждането на стабилни системи, които поддържат бизнес целите."
             >
-            Skilled Developer with over a year hands on experience in full-stack development. Eager to assist in building robust systems that support business goals.
+            If there's a no-bald policy, I'll throw on a wig. Want to see it? Pick a wig option below.
             </p>
+            <div class="wig-selection">
+              <button id="none-btn" class="wig-btn active" data-wig="none">
+                Bald
+              </button>
+              <button id="short-hair-btn" class="wig-btn" data-wig="short">
+                The guy next door
+              </button>
+              <button id="long-hair-btn" class="wig-btn" data-wig="long">
+                Beautiful mama
+              </button>
+            </div>
           </div>
           <div class="hero-image">
             <img
               src="assets/img/HeroPic-removebg-preview.png"
-              alt="Placeholder portrait"
+              alt="Hero portrait"
+              class="hero-base"
               width="560"
               height="560"
               loading="eager"
               decoding="async"
             />
+            <img
+              src="assets/img/hairstyles/short-hair.png"
+              alt="Short hair"
+              id="short-hair"
+              class="short-hair"
+              width="200"
+              height="200"
+            />
+            <img
+            src="assets/img/hairstyles/long-hair.png"
+            alt="Long hair"
+            id="long-hair"
+            class="long-hair"
+            width="200"
+            height="200"
+          />
           </div>
         </div>
       </section>

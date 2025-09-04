@@ -79,6 +79,53 @@ document.addEventListener("DOMContentLoaded", function () {
   if (year) {
     year.textContent = String(new Date().getFullYear());
   }
+
+  // --- Wig Selection ---
+  var noneBtn = document.getElementById("none-btn");
+  var shortHairBtn = document.getElementById("short-hair-btn");
+  var longHairBtn = document.getElementById("long-hair-btn");
+  var shortHairImg = document.getElementById("short-hair");
+  var longHairImg = document.getElementById("long-hair");
+
+  if (noneBtn && shortHairBtn && longHairBtn && shortHairImg && longHairImg) {
+    // Initially show no hair (none selected)
+    shortHairImg.style.display = "none";
+    longHairImg.style.display = "none";
+
+    function updateButtonStates(activeBtn) {
+      // Remove active class from all buttons
+      noneBtn.classList.remove("active");
+      shortHairBtn.classList.remove("active");
+      longHairBtn.classList.remove("active");
+
+      // Add active class to clicked button
+      activeBtn.classList.add("active");
+    }
+
+    noneBtn.addEventListener("click", function () {
+      updateButtonStates(noneBtn);
+
+      // Hide both hair images
+      shortHairImg.style.display = "none";
+      longHairImg.style.display = "none";
+    });
+
+    shortHairBtn.addEventListener("click", function () {
+      updateButtonStates(shortHairBtn);
+
+      // Show short hair, hide long hair
+      shortHairImg.style.display = "block";
+      longHairImg.style.display = "none";
+    });
+
+    longHairBtn.addEventListener("click", function () {
+      updateButtonStates(longHairBtn);
+
+      // Show long hair, hide short hair
+      longHairImg.style.display = "block";
+      shortHairImg.style.display = "none";
+    });
+  }
 });
 
 // Memory Flip Game (icon ↔ name) with timer mode and animations
