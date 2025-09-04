@@ -148,6 +148,7 @@
         </div>
         <h2 class="marquee-heading scroll-animate delay-3">If you are too lazy to play the game, you can check my tech stack below.</h2>
         <button id="lazy-btn" class="lazy-btn scroll-animate delay-1">Yes, I'm Lazy</button>
+        <h2 id="congratulations" class="congratulations hidden">Congratulations!🥳🥳🥳</h2>
         <div class="marquee">
           <div class="marquee-group">
             <div class="tech-item">
@@ -312,10 +313,16 @@
         <h2 class="scroll-animate" data-en="Personal Traits" data-bg="Лична характеристика">
           Personal Traits
         </h2>
-        <div class="traits-inner">
-          <div class="traits-section">
-            <h3 class="scroll-animate delay-1" data-en="Education" data-bg="Образование">Education</h3>
-            <ul class="traits-list">
+        <p class="traits-subtitle scroll-animate delay-1" data-en="A snapshot of my education, experience, projects, and languages." data-bg="Моментна снимка на моето образование, опит, проекти и езици.">
+          A snapshot of my education, experience, projects, and languages.
+        </p>
+        <div class="traits-cards">
+          <div class="trait-card scroll-animate delay-1">
+            <div class="trait-card-header">
+              <div class="trait-icon">🎓</div>
+              <h3 data-en="Education" data-bg="Образование">Education</h3>
+            </div>
+            <ul class="trait-list">
               <li
                 data-en="Master's Degree in Cybersecurity, UNWE, Bulgaria"
                 data-bg="Магистърска степен по Киберсигурност, УНСС, България"
@@ -335,19 +342,22 @@
             Completed company Web Development training program
           </li>
             <li
-              data-en="Partially completed C# path at SoftUni"
+              data-en="Completed C# path at SoftUni"
               data-bg="Частично завършена пътека по C# в SoftUni"
             >
-              Partially completed C# path at SoftUni
+              Completed C# path at SoftUni
             </li>
             </ul>
           </div>
 
-          <div class="traits-section">
-            <h3 class="scroll-animate delay-2" data-en="Personal Projects" data-bg="Лични проекти">
-              Personal Projects
-            </h3>
-            <ul class="traits-list">
+          <div class="trait-card scroll-animate delay-2">
+            <div class="trait-card-header">
+              <div class="trait-icon">💻</div>
+              <h3 data-en="Personal Projects" data-bg="Лични проекти">
+                Personal Projects
+              </h3>
+            </div>
+            <ul class="trait-list">
               <li
                 data-en="Mobile App Development for a leading Bulgarian solar panel company using Swagger, Django, PHP, Python, PostgreSQL"
                 data-bg="Разработка на мобилно приложение за водеща българска компания за соларни панели, използвайки Swagger, Django, PHP, Python, PostgreSQL"
@@ -364,9 +374,12 @@
             </ul>
           </div>
 
-          <div class="traits-section">
-            <h3 class="scroll-animate delay-3" data-en="Experience" data-bg="Опит">Experience</h3>
-            <ul class="traits-list">
+          <div class="trait-card scroll-animate delay-3">
+            <div class="trait-card-header">
+              <div class="trait-icon">⚡</div>
+              <h3 data-en="Experience" data-bg="Опит">Experience</h3>
+            </div>
+            <ul class="trait-list">
               <li
                 data-en="Extensive experience in managing multiple projects simultaneously while adapting to the specific requirements of each."
                 data-bg="Богат опит в едновременното управление на няколко проекта и успешно адаптиране към спецификите на всеки един."
@@ -400,22 +413,59 @@
             </ul>
           </div>
 
-          <div class="traits-section">
-            <h3 class="scroll-animate delay-4" data-en="About Me" data-bg="За мен">About Me</h3>
-            <p
-              class="traits-description"
-              data-en="Calm, focused, and solution-driven. I approach challenges with persistence and professionalism, maintaining a positive attitude from the start of the day. I excel under pressure and prevent conflicts by delivering clear, timely information."
-              data-bg="Спокоен, фокусиран и насочен към решения. Подхождам към предизвикателствата с упоритост и професионализъм, поддържайки позитивно отношение от началото на деня. Отлично се справям под натиск и предотвратявам конфликти чрез доставяне на ясна и навременна информация."
-            >
-              Calm, focused, and solution-driven. I approach challenges with
-              persistence and professionalism, maintaining a positive attitude
-              from the start of the day. I excel under pressure and prevent
-              conflicts by delivering clear, timely information.
-            </p>
+          <div class="trait-card scroll-animate delay-4">
+            <div class="trait-card-header">
+              <div class="trait-icon">👤</div>
+              <h3 data-en="About Me" data-bg="За мен">About Me</h3>
+            </div>
+            <ul class="trait-list">
+              <li
+                data-en="Calm, focused, and solution-driven."
+                data-bg="Спокоен, фокусиран и насочен към решения."
+              >
+                Calm, focused, and solution-driven.
+              </li>
+              <li
+                data-en="Handle pressure; prevent conflicts with clear, timely communication."
+                data-bg="Справям се с натиск; предотвратявам конфликти с ясна и навременна комуникация."
+              >
+                Handle pressure; prevent conflicts with clear, timely communication.
+              </li>
+            </ul>
           </div>
 
-          <div class="traits-section">
-            <h3 class="scroll-animate delay-5" data-en="Languages" data-bg="Владеене на Езици">Languages</h3>
+          <div class="trait-card scroll-animate delay-5">
+            <div class="trait-card-header">
+              <div class="trait-icon">🛠️</div>
+              <h3 data-en="Tools" data-bg="Инструменти">Tools</h3>
+            </div>
+            <ul class="trait-list">
+              <li
+                data-en="Git, GitHub, Jira • Postman"
+                data-bg="Git, GitHub, Jira • Postman"
+              >
+                Git, GitHub, Jira • Postman
+              </li>
+              <li
+                data-en="Docker (basics) • Figma"
+                data-bg="Docker (основи) • Figma"
+              >
+                Docker (basics) • Figma
+              </li>
+              <li
+                data-en="CI/CD (intro)"
+                data-bg="CI/CD (въведение)"
+              >
+                CI/CD (intro)
+              </li>
+            </ul>
+          </div>
+
+          <div class="trait-card scroll-animate delay-6">
+            <div class="trait-card-header">
+              <div class="trait-icon">🌐</div>
+              <h3 data-en="Languages" data-bg="Владеене на Езици">Languages</h3>
+            </div>
             <div class="lang-list">
               <article class="lang">
                 <div class="lang-head">

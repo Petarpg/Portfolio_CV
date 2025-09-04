@@ -56,7 +56,7 @@ body {
 }
 
 .scroll-animate.delay-2 {
-  transition-delay: 0.2s;
+  transition-delay: 0.7s;
 }
 
 .scroll-animate.delay-3 {
@@ -182,7 +182,7 @@ body {
   padding: 0.5rem 0.6rem;
   border-radius: 8px;
   opacity: 0.8;
-  transition: opacity 0.2s ease, background-color 0.2s ease;
+  transition: opacity 0.7s ease, background-color 0.7s ease;
 }
 .nav-links a:hover,
 .nav-links a:focus {
@@ -214,7 +214,7 @@ body {
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.7s ease;
   position: relative;
   opacity: 0.7;
 }
@@ -294,7 +294,7 @@ body {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.7s ease;
   font-size: 0.9rem;
   flex: 1;
   min-width: 0;
@@ -571,6 +571,25 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.congratulations {
+  color: #fbbf24;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem auto;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.congratulations.show {
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 2rem;
+}
+
 .lazy-btn:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -828,30 +847,167 @@ body {
 .traits {
   padding: 4rem 1rem;
 }
-.traits-inner {
-  max-width: 900px;
+
+.traits h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.traits-subtitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.traits-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
-.traits-section {
-  margin-bottom: 2rem;
+
+.trait-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
+  position: relative;
+  overflow: hidden;
 }
-.traits-section h3 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1.25rem;
+
+.trait-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #3b82f6;
+}
+
+.trait-card:nth-child(1)::before {
+  background: #8b5cf6;
+} /* Education - Purple */
+.trait-card:nth-child(2)::before {
+  background: #10b981;
+} /* Personal Projects - Green */
+.trait-card:nth-child(3)::before {
+  background: #f59e0b;
+} /* Experience - Orange */
+.trait-card:nth-child(4)::before {
+  background: #3b82f6;
+} /* About Me - Blue */
+.trait-card:nth-child(5)::before {
+  background: #10b981;
+} /* Tools - Green */
+.trait-card:nth-child(6)::before {
+  background: #f59e0b;
+} /* Languages - Orange */
+
+.trait-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.trait-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.trait-icon {
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.trait-card h3 {
+  margin: 0;
+  font-size: 1.125rem;
   color: #0f172a;
+  font-weight: 600;
+  line-height: 1.4;
 }
-.traits-list {
-  margin: 0 0 1rem 1.25rem;
+
+.trait-list {
+  margin: 0;
   padding: 0;
-  color: #0f172a;
+  list-style: none;
 }
-.traits-list li {
-  margin-bottom: 0.4rem;
+
+.trait-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  color: #475569;
+  line-height: 1.5;
+  font-size: 0.875rem;
 }
-.traits-description {
+
+.trait-list li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.trait-description {
   margin: 0;
   color: #475569;
   line-height: 1.7;
+}
+
+/* Responsive design for trait cards */
+@media (max-width: 1024px) {
+  .traits-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .traits-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .trait-card {
+    padding: 1.25rem;
+  }
+
+  .trait-card h3 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .traits {
+    padding: 2rem 1rem;
+  }
+
+  .traits h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .traits-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .trait-card {
+    padding: 1rem;
+  }
 }
 
 :root {

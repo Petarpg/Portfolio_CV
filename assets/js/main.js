@@ -366,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
           bestEl.textContent = String(best);
         }
         stopTimer();
+        showCongratulations();
       }
     } else {
       lockBoard = true;
@@ -410,6 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     buildDeck();
     render();
+    resetUI();
   }
 
   function stopTimer() {
@@ -436,6 +438,40 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         { once: true }
       );
+    }
+  }
+
+  function showCongratulations() {
+    var lazyBtn = document.getElementById("lazy-btn");
+    var marqueeHeading = document.querySelector(".marquee-heading");
+    var congratulations = document.getElementById("congratulations");
+
+    if (lazyBtn) {
+      lazyBtn.style.display = "none";
+    }
+    if (marqueeHeading) {
+      marqueeHeading.style.display = "none";
+    }
+    if (congratulations) {
+      congratulations.classList.remove("hidden");
+      congratulations.classList.add("show");
+    }
+  }
+
+  function resetUI() {
+    var lazyBtn = document.getElementById("lazy-btn");
+    var marqueeHeading = document.querySelector(".marquee-heading");
+    var congratulations = document.getElementById("congratulations");
+
+    if (lazyBtn) {
+      lazyBtn.style.display = "block";
+    }
+    if (marqueeHeading) {
+      marqueeHeading.style.display = "block";
+    }
+    if (congratulations) {
+      congratulations.classList.add("hidden");
+      congratulations.classList.remove("show");
     }
   }
 
