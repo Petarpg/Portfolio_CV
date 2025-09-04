@@ -19,9 +19,9 @@
           <span class="hamburger" aria-hidden="true"></span>
         </button>
         <ul id="nav-links" class="nav-links">
-          <li><a href="#hero" data-en="Home" data-bg="Начало">Home</a></li>
+          <li><a href="#hero" data-en="Me" data-bg="Начало">Me</a></li>
           <li>
-            <a href="#marquee" data-en="Tech Stack" data-bg="Технологии"
+            <a href="#memory" data-en="Tech Stack" data-bg="Технологии"
               >Tech Stack</a
             >
           </li>
@@ -66,19 +66,19 @@
       <section id="hero" class="hero">
         <div class="hero-grid">
           <div class="hero-text">
-            <h1
+            <h1 class="scroll-animate"
               data-en="Hi, I'm Petar Petrov and that is how i look like."
               data-bg="Здравейте, аз съм Петър Петров и се развивам в сферата на програмирането."
             >
               Hi, I'm Petar Petrov and that is how i look like.
             </h1>
-            <p
+            <p class="scroll-animate delay-1"
               data-en="If there's a no-bald policy, I'll throw on a wig. Want to see it? Pick a wig option below."
               data-bg="Квалифициран разработчик с над година практически опит в разработката на full-stack системи. Готов да съдейства за изграждането на стабилни системи, които поддържат бизнес целите."
             >
             If there's a no-bald policy, I'll throw on a wig. Want to see it? Pick a wig option below.
             </p>
-            <div class="wig-selection">
+            <div class="wig-selection scroll-animate delay-2">
               <button id="none-btn" class="wig-btn active" data-wig="none">
                 Bald
               </button>
@@ -120,8 +120,34 @@
         </div>
       </section>
 
-      <!-- <section id="marquee" class="tech-marquee" aria-label="Tech stack logos">
-        <h2 data-en="Tech Stack" data-bg="Технологии">Tech Stack</h2>
+      <section id="memory" class="memory" aria-label="Memory Flip Game">
+        <h2 class="scroll-animate">PLAY A MINI GAME TO DISCOVER MY TECH STACK</h2>
+        <h3 class="rules-heading scroll-animate delay-1">Rules of the game:</h3>
+        <p class="memory-instruction scroll-animate delay-2">Flip the cards and match each technology icon with its name</p>
+        <div class="memory-controls hidden">
+          <div class="memory-stats">
+            <span class="stat"><strong>Moves:</strong> <span id="mem-moves">0</span></span>
+            <span class="stat"><strong>Matches:</strong> <span id="mem-matches">0</span>/8</span>
+            <span class="stat"><strong>Best:</strong> <span id="mem-best">—</span></span>
+          </div>
+          <div class="memory-actions">
+            <label class="mode-toggle">
+              <input type="checkbox" id="mem-timer-toggle" />
+              <span>Timer mode</span>
+            </label>
+            <span class="timer" id="mem-timer" aria-live="polite" hidden>00:10</span>
+            <button id="mem-restart" class="mem-btn" aria-label="Restart game">Restart</button>
+          </div>
+        </div>
+        <div id="memory-game" class="memory-grid" aria-live="polite"></div>
+        <div id="mem-overlay" class="mem-overlay hidden">
+          <div class="overlay-content">
+            <h3>GAME OVER</h3>
+            <button id="mem-overlay-restart" class="mem-btn overlay-btn">Restart</button>
+          </div>
+        </div>
+        <h2 class="marquee-heading scroll-animate delay-3">If you are too lazy to play the game, you can check my tech stack below.</h2>
+        <button id="lazy-btn" class="lazy-btn scroll-animate delay-1">Yes, I'm Lazy</button>
         <div class="marquee">
           <div class="marquee-group">
             <div class="tech-item">
@@ -150,11 +176,11 @@
             </div>
             <div class="tech-item">
               <img
-                src="assets/img/tech/symfony-icon.png"
-                alt="Symfony"
+                src="assets/img/tech/science.png"
+                alt="React"
                 height="48"
               />
-              <span class="tech-name">Symfony</span>
+              <span class="tech-name">React</span>
             </div>
             <div class="tech-item">
               <img
@@ -228,11 +254,11 @@
             </div>
             <div class="tech-item">
               <img
-                src="assets/img/tech/symfony-icon.png"
-                alt="Symfony"
+                src="assets/img/tech/science.png"
+                alt="React"
                 height="48"
               />
-              <span class="tech-name">Symfony</span>
+              <span class="tech-name">React</span>
             </div>
             <div class="tech-item">
               <img
@@ -280,43 +306,15 @@
             </div>
           </div>
         </div>
-      </section> -->
-
-      <section id="memory" class="memory" aria-label="Memory Flip Game">
-        <h2>PLAY A MINI GAME TO DISCOVER MY TECH STACK</h2>
-        <h3 class="rules-heading">Rules of the game:</h3>
-        <p class="memory-instruction">Flip the cards and match each technology icon with its name</p>
-        <div class="memory-controls hidden">
-          <div class="memory-stats">
-            <span class="stat"><strong>Moves:</strong> <span id="mem-moves">0</span></span>
-            <span class="stat"><strong>Matches:</strong> <span id="mem-matches">0</span>/8</span>
-            <span class="stat"><strong>Best:</strong> <span id="mem-best">—</span></span>
-          </div>
-          <div class="memory-actions">
-            <label class="mode-toggle">
-              <input type="checkbox" id="mem-timer-toggle" />
-              <span>Timer mode</span>
-            </label>
-            <span class="timer" id="mem-timer" aria-live="polite" hidden>00:10</span>
-            <button id="mem-restart" class="mem-btn" aria-label="Restart game">Restart</button>
-          </div>
-        </div>
-        <div id="memory-game" class="memory-grid" aria-live="polite"></div>
-        <div id="mem-overlay" class="mem-overlay hidden">
-          <div class="overlay-content">
-            <h3>GAME OVER</h3>
-            <button id="mem-overlay-restart" class="mem-btn overlay-btn">Restart</button>
-          </div>
-        </div>
       </section>
 
       <section id="traits" class="traits" aria-label="Personal traits">
-        <h2 data-en="Personal Traits" data-bg="Лична характеристика">
+        <h2 class="scroll-animate" data-en="Personal Traits" data-bg="Лична характеристика">
           Personal Traits
         </h2>
         <div class="traits-inner">
           <div class="traits-section">
-            <h3 data-en="Education" data-bg="Образование">Education</h3>
+            <h3 class="scroll-animate delay-1" data-en="Education" data-bg="Образование">Education</h3>
             <ul class="traits-list">
               <li
                 data-en="Master's Degree in Cybersecurity, UNWE, Bulgaria"
@@ -346,7 +344,7 @@
           </div>
 
           <div class="traits-section">
-            <h3 data-en="Personal Projects" data-bg="Лични проекти">
+            <h3 class="scroll-animate delay-2" data-en="Personal Projects" data-bg="Лични проекти">
               Personal Projects
             </h3>
             <ul class="traits-list">
@@ -367,7 +365,7 @@
           </div>
 
           <div class="traits-section">
-            <h3 data-en="Experience" data-bg="Опит">Experience</h3>
+            <h3 class="scroll-animate delay-3" data-en="Experience" data-bg="Опит">Experience</h3>
             <ul class="traits-list">
               <li
                 data-en="Extensive experience in managing multiple projects simultaneously while adapting to the specific requirements of each."
@@ -403,7 +401,7 @@
           </div>
 
           <div class="traits-section">
-            <h3 data-en="About Me" data-bg="За мен">About Me</h3>
+            <h3 class="scroll-animate delay-4" data-en="About Me" data-bg="За мен">About Me</h3>
             <p
               class="traits-description"
               data-en="Calm, focused, and solution-driven. I approach challenges with persistence and professionalism, maintaining a positive attitude from the start of the day. I excel under pressure and prevent conflicts by delivering clear, timely information."
@@ -417,7 +415,7 @@
           </div>
 
           <div class="traits-section">
-            <h3 data-en="Languages" data-bg="Владеене на Езици">Languages</h3>
+            <h3 class="scroll-animate delay-5" data-en="Languages" data-bg="Владеене на Езици">Languages</h3>
             <div class="lang-list">
               <article class="lang">
                 <div class="lang-head">
@@ -440,7 +438,7 @@
       </section>
 
       <section id="hobbies" class="hobbies" aria-label="Hobbies">
-        <h2 data-en="Hobbies" data-bg="Хобита">Hobbies</h2>
+        <h2 class="scroll-animate" data-en="Hobbies" data-bg="Хобита">Hobbies</h2>
         <div class="hobbies-grid">
           <div class="hobby-item">
             <img

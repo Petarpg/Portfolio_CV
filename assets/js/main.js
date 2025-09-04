@@ -1,3 +1,66 @@
+// Scroll Animation System
+document.addEventListener("DOMContentLoaded", function () {
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      } else {
+        entry.target.classList.remove("animate-in");
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with scroll-animate class
+  const animateElements = document.querySelectorAll(".scroll-animate");
+  animateElements.forEach(function (element) {
+    observer.observe(element);
+  });
+
+  // Lazy button functionality
+  const lazyBtn = document.getElementById("lazy-btn");
+  const marquee = document.querySelector(".marquee");
+
+  if (lazyBtn && marquee) {
+    lazyBtn.addEventListener("click", function () {
+      marquee.classList.add("show");
+      lazyBtn.style.display = "none"; // Hide button after clicking
+    });
+  }
+
+  // Navbar scroll detection for Memory section
+  const siteHeader = document.querySelector(".site-header");
+  const memorySection = document.getElementById("memory");
+
+  if (siteHeader && memorySection) {
+    function handleNavbarScroll() {
+      const memoryRect = memorySection.getBoundingClientRect();
+      const headerHeight = siteHeader.offsetHeight;
+
+      // Check if navbar is over the memory section
+      const isOverMemory =
+        memoryRect.top <= headerHeight && memoryRect.bottom >= 0;
+
+      if (isOverMemory) {
+        siteHeader.classList.add("over-memory");
+      } else {
+        siteHeader.classList.remove("over-memory");
+      }
+    }
+
+    // Listen for scroll events
+    window.addEventListener("scroll", handleNavbarScroll);
+
+    // Check initial state
+    handleNavbarScroll();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var toggleButton = document.querySelector(".nav-toggle");
   var navLinks = document.getElementById("nav-links");
@@ -89,8 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (noneBtn && shortHairBtn && longHairBtn && shortHairImg && longHairImg) {
     // Initially show no hair (none selected)
-    shortHairImg.style.display = "none";
-    longHairImg.style.display = "none";
+    shortHairImg.classList.remove("show");
+    longHairImg.classList.remove("show");
 
     function updateButtonStates(activeBtn) {
       // Remove active class from all buttons
@@ -102,28 +165,34 @@ document.addEventListener("DOMContentLoaded", function () {
       activeBtn.classList.add("active");
     }
 
+    function hideAllHair() {
+      shortHairImg.classList.remove("show");
+      longHairImg.classList.remove("show");
+    }
+
     noneBtn.addEventListener("click", function () {
       updateButtonStates(noneBtn);
-
-      // Hide both hair images
-      shortHairImg.style.display = "none";
-      longHairImg.style.display = "none";
+      hideAllHair();
     });
 
     shortHairBtn.addEventListener("click", function () {
       updateButtonStates(shortHairBtn);
 
-      // Show short hair, hide long hair
-      shortHairImg.style.display = "block";
-      longHairImg.style.display = "none";
+      // Hide long hair first, then show short hair with animation
+      longHairImg.classList.remove("show");
+      setTimeout(function () {
+        shortHairImg.classList.add("show");
+      }, 50);
     });
 
     longHairBtn.addEventListener("click", function () {
       updateButtonStates(longHairBtn);
 
-      // Show long hair, hide short hair
-      longHairImg.style.display = "block";
-      shortHairImg.style.display = "none";
+      // Hide short hair first, then show long hair with animation
+      shortHairImg.classList.remove("show");
+      setTimeout(function () {
+        longHairImg.classList.add("show");
+      }, 50);
     });
   }
 });
@@ -157,9 +226,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { key: "css", label: "CSS", img: "assets/img/tech/icons8-css-100.png" },
     { key: "js", label: "JavaScript", img: "assets/img/tech/icons8-js-48.png" },
     {
-      key: "symfony",
-      label: "Symfony",
-      img: "assets/img/tech/symfony-icon.png",
+      key: "React",
+      label: "React",
+      img: "assets/img/tech/science.png",
     },
     {
       key: "python",

@@ -10,6 +10,26 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Theme-aware CSS Custom Properties */
+:root {
+  --nav-bg: #ffffff;
+  --nav-text: #0f172a;
+  --nav-border: #e2e8f0;
+  --nav-backdrop: rgba(255, 255, 255, 0.9);
+  --nav-accent: #3b82f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-bg: #000000;
+    --nav-text: #ffffff;
+    --nav-border: #374151;
+    --nav-backdrop: rgba(0, 0, 0, 0.9);
+    --nav-accent: #60a5fa;
+  }
+}
+
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     "Apple Color Emoji", "Segoe UI Emoji";
@@ -18,14 +38,91 @@ body {
   line-height: 1.6;
 }
 
+/* Scroll Animation Styles */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays for multiple elements */
+.scroll-animate.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.scroll-animate.delay-5 {
+  transition-delay: 0.5s;
+}
+
 /* Layout */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--nav-backdrop);
   backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--nav-border);
+  transition: background-color 0.7s ease, border-color 0.7s ease;
+}
+
+/* Memory section navbar override */
+.site-header.over-memory {
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #e2e8f0;
+}
+
+.site-header.over-memory .brand {
+  color: #0f172a;
+}
+
+.site-header.over-memory .nav-links a {
+  color: #0f172a;
+}
+
+.site-header.over-memory .nav-links a:hover,
+.site-header.over-memory .nav-links a:focus {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.site-header.over-memory .language-switcher {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+}
+
+.site-header.over-memory .lang-btn {
+  color: #0f172a;
+}
+
+.site-header.over-memory .lang-btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.site-header.over-memory .lang-btn:focus {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.site-header.over-memory .lang-btn:first-child {
+  border-right: 1px solid #e2e8f0;
 }
 .navbar {
   display: flex;
@@ -38,7 +135,7 @@ body {
 .brand {
   font-weight: 700;
   text-decoration: none;
-  color: #0f172a;
+  color: var(--nav-text);
   letter-spacing: 0.2px;
 }
 
@@ -81,23 +178,26 @@ body {
 }
 .nav-links a {
   text-decoration: none;
-  color: #334155;
+  color: var(--nav-text);
   padding: 0.5rem 0.6rem;
   border-radius: 8px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 .nav-links a:hover,
 .nav-links a:focus {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: var(--nav-text);
+  color: var(--nav-bg);
+  opacity: 1;
   outline: none;
 }
 
 /* Language Switcher */
 .language-switcher {
   display: flex;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--nav-border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--nav-bg);
   overflow: hidden;
   margin-left: 1rem;
 }
@@ -110,32 +210,34 @@ body {
   height: 40px;
   border: none;
   background: transparent;
-  color: #475569;
+  color: var(--nav-text);
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  opacity: 0.7;
 }
 
 .lang-btn:hover {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: var(--nav-text);
+  color: var(--nav-bg);
+  opacity: 1;
 }
 
 .lang-btn:focus {
   outline: none;
-  background: #f1f5f9;
-  color: #0f172a;
+  background: var(--nav-text);
+  color: var(--nav-bg);
 }
 
 .lang-btn.active {
-  background: #3b82f6;
+  background: var(--nav-accent);
   color: #ffffff;
 }
 
 .lang-btn:first-child {
-  border-right: 1px solid #e2e8f0;
+  border-right: 1px solid var(--nav-border);
 }
 
 .content {
@@ -223,9 +325,34 @@ body {
 .tech-marquee {
   padding: 4rem 1rem;
 }
+/* базово състояние: скрито */
 .marquee {
   position: relative;
-  overflow: hidden;
+  display: flex; /* винаги flex; не го пипаме */
+  align-items: center; /* твоя подредба */
+  gap: 0.75rem;
+
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(6px);
+
+  max-height: 0; /* сгънато */
+  overflow: hidden; /* скрий съдържанието */
+  pointer-events: none;
+
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 0.68, 0, 1),
+    filter 0.45s ease, max-height 0.45s ease;
+}
+
+/* показано */
+.marquee.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+
+  /* задай реалната височина на лентата (или използвай променлива) */
+  max-height: var(--marquee-h, 96px);
+  pointer-events: auto;
 }
 .marquee::before,
 .marquee::after {
@@ -244,8 +371,12 @@ body {
   right: 0;
   background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
-.marquee {
-  display: flex;
+
+/* уважи reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    transition: none;
+  }
 }
 .marquee-group {
   display: flex;
@@ -277,7 +408,12 @@ body {
 }
 /* Memory Flip */
 .memory {
-  padding: 2rem 1rem;
+  position: relative;
+  isolation: isolate; /* за да работи -z без да „потъва“ */
+  color: black;
+  text-align: center;
+
+  padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -287,6 +423,19 @@ body {
   text-align: center;
   min-height: 100vh;
 }
+
+.memory::before {
+  content: "";
+  position: absolute;
+  z-index: -1; /* зад съдържанието */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw; /* цял екран по ширина */
+  transform: translateX(-50%);
+  background: #000; /* цветът на секцията */
+}
+
 .memory h2 {
   margin: 0 0 1.5rem 0;
   font-size: 1.1rem;
@@ -369,7 +518,9 @@ body {
   height: auto;
   pointer-events: none;
   z-index: 2;
-  transform: rotate(-0.02turn);
+  transform: rotate(-0.02turn) scale(0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .hero-image .long-hair {
@@ -380,7 +531,49 @@ body {
   height: auto;
   pointer-events: none;
   z-index: 2;
-  transform: rotate(-0.02turn);
+  transform: rotate(-0.02turn) scale(0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.hero-image .short-hair.show {
+  opacity: 1;
+  transform: rotate(-0.02turn) scale(1);
+}
+
+.hero-image .long-hair.show {
+  opacity: 1;
+  transform: rotate(-0.02turn) scale(1);
+}
+
+.marquee-heading {
+  padding-top: 2rem;
+}
+
+.lazy-btn {
+  background: #fbbf24;
+  color: #000;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem auto 2rem auto;
+  display: block;
+  transition: all 0.7s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lazy-btn:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.lazy-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .memory-grid {
@@ -553,7 +746,6 @@ body {
 @media (max-width: 640px) {
   .memory h2 {
     font-size: 0.9rem;
-    margin-bottom: 1rem;
   }
   .rules-heading {
     font-size: 1.4rem;
