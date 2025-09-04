@@ -242,6 +242,286 @@ body {
   text-align: center;
   white-space: nowrap;
 }
+/* Memory Flip */
+.memory {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+}
+.memory h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.rules-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+.memory-instruction {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.memory-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 0.75rem auto;
+}
+.memory-stats {
+  color: #475569;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.memory-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #475569;
+}
+.mem-btn {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.mem-btn:hover,
+.mem-btn:focus {
+  background: #eef2ff;
+  outline: none;
+}
+.timer {
+  color: #0f172a;
+  font-variant-numeric: tabular-nums;
+}
+
+.memory-grid {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+@media (max-width: 1536px) {
+  .memory-grid {
+    max-width: 480px;
+  }
+}
+
+.mem-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.overlay-content {
+  text-align: center;
+  color: #ffffff;
+}
+.overlay-content h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+}
+.overlay-btn {
+  background: #fbbf24;
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.overlay-btn:hover {
+  background: #f59e0b;
+}
+.hidden {
+  display: none !important;
+}
+.mem-overlay-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  width: min(92vw, 420px);
+  text-align: center;
+}
+.mem-overlay-text {
+  color: #475569;
+  margin: 0.25rem 0 0.75rem 0;
+}
+.card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  perspective: 900px;
+}
+.card-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 500ms ease;
+  border-radius: 12px;
+}
+.card.is-matched .card-inner {
+  box-shadow: 0 0 0 2px #22c55e inset;
+}
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
+}
+.card-front {
+  background: #1e3a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-front::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+.card-back {
+  background: #1e3a8a;
+  transform: rotateY(180deg);
+}
+.card.shake .card-inner {
+  animation: shake 300ms ease;
+}
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+  display: none;
+}
+.card.is-matched .sparkle {
+  display: block;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0) 40%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0) 50%
+    );
+  mix-blend-mode: screen;
+}
+.card-content {
+  text-align: center;
+  padding: 0.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.card-content img {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+.card-content .label {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+@keyframes shake {
+  10% {
+    transform: translateX(-3px) rotateZ(-1deg);
+  }
+  20% {
+    transform: translateX(3px) rotateZ(1deg);
+  }
+  30% {
+    transform: translateX(-3px) rotateZ(-1deg);
+  }
+  40% {
+    transform: translateX(3px) rotateZ(1deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .memory h2 {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .rules-heading {
+    font-size: 1.4rem;
+  }
+  .memory-instruction {
+    font-size: 0.9rem;
+  }
+  .memory-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem;
+    max-width: 100%;
+  }
+  .memory-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .memory-stats {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .memory-actions {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-inner {
+    transition: none;
+  }
+  .card.shake .card-inner {
+    animation: none;
+  }
+}
 @keyframes scroll-x {
   from {
     transform: translateX(0);
