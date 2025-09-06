@@ -1415,8 +1415,9 @@ body {
 
 /* Footer */
 .site-footer {
-  border-top: 1px solid #e2e8f0;
-  background: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  color: #ffffff;
 }
 .footer-inner {
   max-width: 1100px;
@@ -1441,27 +1442,33 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 .footer-links a:hover,
 .footer-links a:focus {
-  background: #eef2ff;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 .footer-copy {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  color: #0f172a;
+  color: #ffffff;
 }
 .contact-title {
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: #ffffff;
 }
 .contact-row {
   display: flex;
@@ -1469,10 +1476,10 @@ body {
   font-size: 0.9rem;
 }
 .contact-label {
-  color: #475569;
+  color: rgba(255, 255, 255, 0.8);
 }
 .contact-value {
-  color: #0f172a;
+  color: #ffffff;
 }
 .phone-number {
   display: inline-flex;
@@ -1481,12 +1488,20 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 0.75rem;
   font-weight: 500;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.phone-number:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 1030px) {
