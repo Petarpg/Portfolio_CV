@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-en="Portfolio CV" data-bg="Портфолио CV">Portfolio CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -19,7 +22,7 @@
           <span class="hamburger" aria-hidden="true"></span>
         </button>
         <ul id="nav-links" class="nav-links">
-          <li><a href="#hero" data-en="Me" data-bg="Начало">Me</a></li>
+          <li><a href="#hero" data-en="Me" data-bg="За мен">Me</a></li>
           <li>
             <a href="#memory" data-en="Tech Stack" data-bg="Технологии"
               >Tech Stack</a
@@ -68,24 +71,24 @@
           <div class="hero-text">
             <h1 class="scroll-animate"
               data-en="Hi, I'm Petar Petrov and that is how i look like."
-              data-bg="Здравейте, аз съм Петър Петров и се развивам в сферата на програмирането."
+              data-bg="Здравей, аз съм Петър Петров и така изглеждам."
             >
               Hi, I'm Petar Petrov and that is how i look like.
             </h1>
             <p class="scroll-animate delay-1"
               data-en="If there's a no-bald policy, I'll throw on a wig. Want to see it? Pick a wig option below."
-              data-bg="Квалифициран разработчик с над година практически опит в разработката на full-stack системи. Готов да съдейства за изграждането на стабилни системи, които поддържат бизнес целите."
+              data-bg="Ако имате политика „без плешиви“, ще сложа перука. Искаш ли да видиш? Избери стил на перука по-долу."
             >
             If there's a no-bald policy, I'll throw on a wig. Want to see it? Pick a wig option below.
             </p>
             <div class="wig-selection scroll-animate delay-2">
-              <button id="none-btn" class="wig-btn active" data-wig="none">
+              <button id="none-btn" class="wig-btn active" data-wig="none" data-en="Bald" data-bg="Без коса">
                 Bald
               </button>
-              <button id="short-hair-btn" class="wig-btn" data-wig="short">
+              <button id="short-hair-btn" class="wig-btn" data-wig="short" data-en="The guy next door" data-bg="Съседа">
                 The guy next door
               </button>
-              <button id="long-hair-btn" class="wig-btn" data-wig="long">
+              <button id="long-hair-btn" class="wig-btn" data-wig="long" data-en="Beautiful mama" data-bg="Мамюето">
                 Beautiful mama
               </button>
             </div>
@@ -121,9 +124,9 @@
       </section>
 
       <section id="memory" class="memory" aria-label="Memory Flip Game">
-        <h2 class="scroll-animate">PLAY A MINI GAME TO DISCOVER MY TECH STACK</h2>
-        <h3 class="rules-heading scroll-animate delay-1">Rules of the game:</h3>
-        <p class="memory-instruction scroll-animate delay-2">Flip the cards and match each technology icon with its name</p>
+        <h2 class="scroll-animate" data-en="PLAY A MINI GAME TO DISCOVER MY TECH STACK" data-bg="Играй мини игра, за да откриеш моя технологичен стак.">PLAY A MINI GAME TO DISCOVER MY TECH STACK</h2>
+        <h3 class="rules-heading scroll-animate delay-1" data-en="Rules of the game:" data-bg="Правила на играта:">Rules of the game:</h3>
+        <p class="memory-instruction scroll-animate delay-2" data-en="Flip the cards and match each technology icon with its name" data-bg="Обръщай картите и съчетавай иконата на технологията с нейното име.">Flip the cards and match each technology icon with its name</p>
         <div class="memory-controls hidden">
           <div class="memory-stats">
             <span class="stat"><strong>Moves:</strong> <span id="mem-moves">0</span></span>
@@ -146,9 +149,9 @@
             <button id="mem-overlay-restart" class="mem-btn overlay-btn">Restart</button>
           </div>
         </div>
-        <h2 class="marquee-heading scroll-animate delay-3">If you are too lazy to play the game, you can check my tech stack below.</h2>
-        <button id="lazy-btn" class="lazy-btn scroll-animate delay-1">Yes, I'm too Lazy</button>
-        <h2 id="congratulations" class="congratulations hidden">Congratulations!🥳🥳🥳</h2>
+        <h2 class="marquee-heading scroll-animate delay-3" data-en="If you are too lazy to play the game, you can check my tech stack below." data-bg="Ако не ти се играе, можеш да видиш моя технологичен стек по-долу.">If you are too lazy to play the game, you can check my tech stack below.</h2>
+        <button id="lazy-btn" class="lazy-btn scroll-animate delay-1" data-en="Yes, I'm too Lazy" data-bg="Да, аз съм прекалено ленив">Yes, I'm too Lazy</button>
+        <h2 id="congratulations" class="congratulations hidden" data-en="Congratulations!🥳🥳🥳" data-bg="Поздравления!🥳🥳🥳">Congratulations!🥳🥳🥳</h2>
         <div class="marquee">
           <div class="marquee-group">
             <div class="tech-item">
@@ -313,7 +316,7 @@
         <h2 class="scroll-animate" data-en="Personal Traits" data-bg="Лична характеристика">
           Personal Traits
         </h2>
-        <p class="traits-subtitle scroll-animate delay-1" data-en="A snapshot of my education, experience, projects, and languages." data-bg="Моментна снимка на моето образование, опит, проекти и езици.">
+        <p class="traits-subtitle scroll-animate delay-1" data-en="A snapshot of my education, experience, projects, and languages." data-bg="Кратък поглед към моето образование, опит, проекти и езици.">
           A snapshot of my education, experience, projects, and languages.
         </p>
         <div class="traits-cards">
@@ -489,84 +492,42 @@
 
       <section id="hobbies" class="hobbies" aria-label="Hobbies">
         <h2 class="scroll-animate" data-en="Hobbies" data-bg="Хобита">Hobbies</h2>
-        <div class="hobbies-grid">
-          <div class="hobby-item">
-            <img
-            class="hobby-icon"
-            src="assets/img/hobbies/code.png"
-            alt=""
-            aria-hidden="true"
-            width="40"
-            height="40"
-            />
-            <span class="hobby-name" data-en="Coding" data-bg="Програмиране"
-            >Coding</span
-            >
+        <div class="photo-gallery">
+          <div class="gallery-item scroll-reveal" data-delay="0">
+            <img src="assets/img/newHobbies/airsoft.jpg" alt="Airsoft" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption" data-en="Airsoft" data-bg="Въздушни оръжия">Airsoft</span>
+            </div>
           </div>
-          <div class="hobby-item">
-            <img
-            class="hobby-icon"
-            src="assets/img/hobbies/sports.png"
-            alt=""
-            aria-hidden="true"
-            width="40"
-            height="40"
-            />
-            <span class="hobby-name" data-en="Sports" data-bg="Спорт"
-            >Sports</span
-            >
+          <div class="gallery-item scroll-reveal" data-delay="100">
+            <img src="assets/img/newHobbies/chess.jpg" alt="Chess" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption" data-en="Chess" data-bg="Шах">Chess</span>
+            </div>
           </div>
-          <div class="hobby-item">
-            <img
-            class="hobby-icon"
-            src="assets/img/hobbies/airplane-around-earth.png"
-            alt=""
-            aria-hidden="true"
-            width="40"
-            height="40"
-            />
-            <span class="hobby-name" data-en="Traveling" data-bg="Пътуване"
-            >Traveling</span
-            >
+          <div class="gallery-item scroll-reveal" data-delay="200">
+            <img src="assets/img/newHobbies/football.gif" alt="Football" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption" data-en="Football" data-bg="Футбол">Football</span>
+            </div>
           </div>
-          <div class="hobby-item">
-            <img
-            class="hobby-icon"
-            src="assets/img/hobbies/console.png"
-            alt=""
-            aria-hidden="true"
-            width="40"
-            height="40"
-            />
-            <span class="hobby-name" data-en="Gaming" data-bg="Игри"
-            >Gaming</span
-            >
+          <div class="gallery-item scroll-reveal" data-delay="300">
+            <img src="assets/img/newHobbies/gaming.gif" alt="Gaming" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption" data-en="Gaming" data-bg="Игри">Gaming</span>
+            </div>
           </div>
-          <div class="hobby-item">
-            <img
-              class="hobby-icon"
-              src="assets/img/hobbies/golf-player.png"
-              alt=""
-              aria-hidden="true"
-              width="40"
-              height="40"
-            />
-            <span class="hobby-name" data-en="Golf" data-bg="Голф"
-              >Golf</span
-            >
+          <div class="gallery-item scroll-reveal" data-delay="400">
+            <img src="assets/img/newHobbies/hacker-cat.gif" alt="Coding" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption" data-en="Coding" data-bg="Програмиране">Coding</span>
+            </div>
           </div>
-          <div class="hobby-item">
-            <img
-              class="hobby-icon"
-              src="assets/img/hobbies/chess.png"
-              alt=""
-              aria-hidden="true"
-              width="40"
-              height="40"
-            />
-            <span class="hobby-name" data-en="Chess" data-bg="Шах"
-              >Chess</span
-            >
+          <div class="gallery-item scroll-reveal" data-delay="500">
+            <img src="assets/img/newHobbies/traveling.jpg" alt="Traveling" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-caption" data-en="Traveling" data-bg="Пътуване">Traveling</span>
+            </div>
           </div>
         </div>
       </section>

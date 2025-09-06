@@ -22,6 +22,29 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(element);
   });
 
+  // Photo Gallery Scroll Reveal Animation
+  const galleryObserverOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const galleryObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+      } else {
+        // Remove revealed class when scrolling back up to replay animation
+        entry.target.classList.remove("revealed");
+      }
+    });
+  }, galleryObserverOptions);
+
+  // Observe all gallery items
+  const galleryItems = document.querySelectorAll(".scroll-reveal");
+  galleryItems.forEach(function (item) {
+    galleryObserver.observe(item);
+  });
+
   // Lazy button functionality
   const lazyBtn = document.getElementById("lazy-btn");
   const marquee = document.querySelector(".marquee");
