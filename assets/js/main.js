@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Photo Gallery Scroll Reveal Animation
   const galleryObserverOptions = {
     threshold: 0.2,
-    rootMargin: "0px 0px -100px 0px",
+    rootMargin: "0px 0px 20% 0px",
   };
 
   const galleryObserver = new IntersectionObserver(function (entries) {
@@ -170,22 +170,33 @@ document.addEventListener("DOMContentLoaded", function () {
   var noneBtn = document.getElementById("none-btn");
   var shortHairBtn = document.getElementById("short-hair-btn");
   var longHairBtn = document.getElementById("long-hair-btn");
+  var noneBtnMobile = document.getElementById("none-btn-mobile");
+  var shortHairBtnMobile = document.getElementById("short-hair-btn-mobile");
+  var longHairBtnMobile = document.getElementById("long-hair-btn-mobile");
   var shortHairImg = document.getElementById("short-hair");
   var longHairImg = document.getElementById("long-hair");
 
-  if (noneBtn && shortHairBtn && longHairBtn && shortHairImg && longHairImg) {
+  if (shortHairImg && longHairImg) {
     // Initially show no hair (none selected)
     shortHairImg.classList.remove("show");
     longHairImg.classList.remove("show");
 
     function updateButtonStates(activeBtn) {
-      // Remove active class from all buttons
-      noneBtn.classList.remove("active");
-      shortHairBtn.classList.remove("active");
-      longHairBtn.classList.remove("active");
+      // Remove active class from all buttons (both desktop and mobile)
+      var allButtons = [
+        noneBtn,
+        shortHairBtn,
+        longHairBtn,
+        noneBtnMobile,
+        shortHairBtnMobile,
+        longHairBtnMobile,
+      ];
+      allButtons.forEach(function (btn) {
+        if (btn) btn.classList.remove("active");
+      });
 
       // Add active class to clicked button
-      activeBtn.classList.add("active");
+      if (activeBtn) activeBtn.classList.add("active");
     }
 
     function hideAllHair() {
@@ -193,30 +204,67 @@ document.addEventListener("DOMContentLoaded", function () {
       longHairImg.classList.remove("show");
     }
 
-    noneBtn.addEventListener("click", function () {
-      updateButtonStates(noneBtn);
-      hideAllHair();
-    });
+    function handleWigSelection(wigType) {
+      if (wigType === "none") {
+        hideAllHair();
+      } else if (wigType === "short") {
+        // Hide long hair first, then show short hair with animation
+        longHairImg.classList.remove("show");
+        setTimeout(function () {
+          shortHairImg.classList.add("show");
+        }, 50);
+      } else if (wigType === "long") {
+        // Hide short hair first, then show long hair with animation
+        shortHairImg.classList.remove("show");
+        setTimeout(function () {
+          longHairImg.classList.add("show");
+        }, 50);
+      }
+    }
 
-    shortHairBtn.addEventListener("click", function () {
-      updateButtonStates(shortHairBtn);
+    // Desktop button event listeners
+    if (noneBtn) {
+      noneBtn.addEventListener("click", function () {
+        updateButtonStates(noneBtn);
+        handleWigSelection("none");
+      });
+    }
 
-      // Hide long hair first, then show short hair with animation
-      longHairImg.classList.remove("show");
-      setTimeout(function () {
-        shortHairImg.classList.add("show");
-      }, 50);
-    });
+    if (shortHairBtn) {
+      shortHairBtn.addEventListener("click", function () {
+        updateButtonStates(shortHairBtn);
+        handleWigSelection("short");
+      });
+    }
 
-    longHairBtn.addEventListener("click", function () {
-      updateButtonStates(longHairBtn);
+    if (longHairBtn) {
+      longHairBtn.addEventListener("click", function () {
+        updateButtonStates(longHairBtn);
+        handleWigSelection("long");
+      });
+    }
 
-      // Hide short hair first, then show long hair with animation
-      shortHairImg.classList.remove("show");
-      setTimeout(function () {
-        longHairImg.classList.add("show");
-      }, 50);
-    });
+    // Mobile button event listeners
+    if (noneBtnMobile) {
+      noneBtnMobile.addEventListener("click", function () {
+        updateButtonStates(noneBtnMobile);
+        handleWigSelection("none");
+      });
+    }
+
+    if (shortHairBtnMobile) {
+      shortHairBtnMobile.addEventListener("click", function () {
+        updateButtonStates(shortHairBtnMobile);
+        handleWigSelection("short");
+      });
+    }
+
+    if (longHairBtnMobile) {
+      longHairBtnMobile.addEventListener("click", function () {
+        updateButtonStates(longHairBtnMobile);
+        handleWigSelection("long");
+      });
+    }
   }
 });
 
